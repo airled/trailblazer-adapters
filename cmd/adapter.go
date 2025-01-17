@@ -18,6 +18,7 @@ const (
 	OmnihubContractDeployed  adapter = "OmnihubContractDeployed"
 	Nfts2meCollectionCreated adapter = "Nfts2meCollectionCreated"
 	ConftTokenSold           adapter = "ConftTokenSold"
+	CopumpTokenPurchased     adapter = "CopumpTokenPurchased"
 	DripsLock                adapter = "DripsLock"
 	SymmetricLock            adapter = "SymmetricLock"
 	RobinosPrediction        adapter = "RobinosPrediction"
@@ -38,6 +39,7 @@ func adapterz() []adapter {
 		OmnihubContractDeployed,
 		Nfts2meCollectionCreated,
 		ConftTokenSold,
+		CopumpTokenPurchased,
 		DripsLock,
 		SymmetricLock,
 		RobinosPrediction,

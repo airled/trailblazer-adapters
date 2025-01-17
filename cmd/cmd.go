@@ -14,6 +14,7 @@ import (
 	"github.com/taikoxyz/trailblazer-adapters/adapters"
 	nftdeployed "github.com/taikoxyz/trailblazer-adapters/adapters/nft_deployed"
 	"github.com/taikoxyz/trailblazer-adapters/adapters/projects/conft"
+	"github.com/taikoxyz/trailblazer-adapters/adapters/projects/copump"
 	"github.com/taikoxyz/trailblazer-adapters/adapters/projects/domains"
 	"github.com/taikoxyz/trailblazer-adapters/adapters/projects/drips"
 	"github.com/taikoxyz/trailblazer-adapters/adapters/projects/gaming"
@@ -167,6 +168,13 @@ func executeCommand(p prompt) error {
 		indexer := conft.NewTokenSoldIndexer(
 			client,
 			[]common.Address{common.HexToAddress(conft.TokenSoldAddress)},
+		)
+		return processLog(ctx, client, indexer, p.Blocknumber)
+
+	case CopumpTokenPurchased:
+		indexer := copump.NewTokenPurchasedIndexer(
+			client,
+			[]common.Address{common.HexToAddress(copump.TokenPurchasedAddress)},
 		)
 		return processLog(ctx, client, indexer, p.Blocknumber)
 
